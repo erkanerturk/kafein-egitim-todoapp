@@ -5,6 +5,8 @@ import TodoList from "./TodoList";
 
 import TodoFetch from "./TodoFetch";
 
+import { withRouter } from "react-router-dom";
+
 class Todo extends Component {
   state = {
     todos: []
@@ -22,12 +24,19 @@ class Todo extends Component {
     return (
       <div>
         <TodoForm saveTodo={this.saveTodo} />
-        <TodoList data={this.state.todos} />
+        <TodoList />
 
         <TodoFetch />
+
+        <button
+          className="btn btn-primary"
+          onClick={() => this.props.history.push("/user")}
+        >
+          User page
+        </button>
       </div>
     );
   }
 }
 
-export default Todo;
+export default withRouter(Todo);

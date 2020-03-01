@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { connect } from "react-redux";
+
 class TodoList extends Component {
   render() {
     return (
@@ -11,5 +13,11 @@ class TodoList extends Component {
     );
   }
 }
+
+const mapStateToProps = store => {
+  return {
+    todos: store.todo.todos
+  };
+};
 
 export default TodoList;
