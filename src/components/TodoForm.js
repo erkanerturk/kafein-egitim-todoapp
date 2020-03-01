@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import { connect } from "react-redux";
+import { addTodo } from "../redux/modules/todo/todo.action";
+
 class TodoForm extends Component {
   state = {
     title: "",
@@ -7,7 +10,7 @@ class TodoForm extends Component {
   };
 
   handleSubmit = () => {
-    this.props.saveTodo(this.state);
+    this.props.addTodo(this.state);
   };
 
   render() {
@@ -48,4 +51,8 @@ class TodoForm extends Component {
   }
 }
 
-export default TodoForm;
+const mapDispatchToProps = {
+  addTodo
+};
+
+export default connect(null, mapDispatchToProps)(TodoForm);

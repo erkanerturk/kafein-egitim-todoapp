@@ -8,22 +8,22 @@ import TodoFetch from "./TodoFetch";
 import { withRouter } from "react-router-dom";
 
 class Todo extends Component {
-  state = {
-    todos: []
-  };
+  // state = {
+  //   todos: []
+  // };
 
-  saveTodo = todo => {
-    this.setState(prevState => {
-      return {
-        todos: [...prevState.todos, todo]
-      };
-    });
-  };
+  // saveTodo = todo => {
+  //   this.setState(prevState => {
+  //     return {
+  //       todos: [...prevState.todos, todo]
+  //     };
+  //   });
+  // };
 
   render() {
     return (
       <div>
-        <TodoForm saveTodo={this.saveTodo} />
+        <TodoForm />
         <TodoList />
 
         <TodoFetch />

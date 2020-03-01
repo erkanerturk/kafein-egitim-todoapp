@@ -6,7 +6,7 @@ class TodoList extends Component {
   render() {
     return (
       <ul className="list-group">
-        {this.props.data.map(todo => {
+        {this.props.todos.map(todo => {
           return <li className="list-group-item">{todo.title}</li>;
         })}
       </ul>
@@ -20,4 +20,4 @@ const mapStateToProps = store => {
   };
 };
 
-export default TodoList;
+export default connect(mapStateToProps)(TodoList);
